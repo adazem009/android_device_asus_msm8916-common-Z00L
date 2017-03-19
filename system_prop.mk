@@ -15,7 +15,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.media_vol_steps=25 \
     ro.audio.flinger_standbytime_ms=300 \
     ro.af.client_heap_size_kbyte=7168 \
-    ro.vendor.audio.sdk.fluencetype=fluence \
     ro.vendor.audio.sdk.ssr=false \
     vendor.audio.tunnel.encode=false \
     vendor.voice.path.for.pcm.voip=true \
@@ -24,6 +23,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.voice.record.conc.disabled=false \
     vendor.voice.voip.conc.disabled=true \
     vendor.audio_hal.period_size=192
+
+# Audio
+ifeq ($(TARGET_DEVICE),Z010D)
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.audio.sdk.fluencetype=fluence
+else
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.audio.sdk.fluencetype=none
+endif
 
 # Audio offload
 PRODUCT_PROPERTY_OVERRIDES += \

@@ -1,7 +1,7 @@
 [
   {
-   "repository": "android_packages_apps_FlipFlap",
-   "target_path": "packages/apps/FlipFlap"
+    "repository": "android_external_sony_boringssl-compat",
+    "target_path": "external/sony/boringssl-compat"
   },
   {
     "repository": "android_hardware_sony_timekeep",

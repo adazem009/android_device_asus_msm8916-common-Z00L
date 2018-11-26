@@ -306,8 +306,10 @@ PRODUCT_PACKAGES += \
 
 # Telephony packages
 PRODUCT_PACKAGES += \
-    telephony-ext \
-    qti-telephony-common
+    qti-telephony-common \
+    qti-telephony-hidl-wrapper \
+    qti_telephony_hidl_wrapper.xml \
+    telephony-ext
 
 PRODUCT_BOOT_JARS += \
     telephony-ext

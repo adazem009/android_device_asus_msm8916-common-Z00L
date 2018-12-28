@@ -183,6 +183,11 @@ PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.manager@1.0
 
+# IMS
+PRODUCT_PACKAGES += \
+    ims-ext-common \
+    ims_ext_common.xml \
+
 # IRSC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
@@ -302,7 +307,6 @@ PRODUCT_PACKAGES += \
 # Telephony packages
 PRODUCT_PACKAGES += \
     telephony-ext \
-    ims-ext-common \
     qti-telephony-common
 
 PRODUCT_BOOT_JARS += \

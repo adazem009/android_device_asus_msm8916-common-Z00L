@@ -198,6 +198,10 @@ PRODUCT_BOOT_JARS += \
     ims-ext-common_system \
     telephony-ext
 
+# Touch HAL
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.asus_8953
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
 

@@ -183,7 +183,7 @@ USE_OPENGL_RENDERER := true
 
 # SELinux
 include device/qcom/sepolicy-legacy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
+BOARD_VENDOR_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
 
 # Dexpreopt
 ifeq ($(HOST_OS),linux)

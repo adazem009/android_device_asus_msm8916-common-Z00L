@@ -170,6 +170,9 @@ TARGET_USES_INTERACTION_BOOST := true
 # Create Root partitions
 BOARD_ROOT_EXTRA_FOLDERS := firmware persist factory asdf
 
+# APEX
+TARGET_FLATTEN_APEX := true
+
 # Qualcomm support
 BOARD_USES_QCOM_HARDWARE := true
 

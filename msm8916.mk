@@ -139,6 +139,10 @@ PRODUCT_PACKAGES += \
     libgenlock \
     memtrack.msm8916
 
+# Encryption
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.cryptfshw@1.0-service-qti.qsee
+
 # FM
 PRODUCT_PACKAGES += \
     FMRadio \

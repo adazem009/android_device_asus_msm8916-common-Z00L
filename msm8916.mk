@@ -187,9 +187,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ims-ext-common_system \
     ims_ext_common.xml \
+    qti-telephony-hidl-wrapper \
+    qti_telephony_hidl_wrapper.xml \
+    qti-telephony-utils \
+    qti_telephony_utils.xml \
+    telephony-ext
 
 PRODUCT_BOOT_JARS += \
-    ims-ext-common_system
+    ims-ext-common_system \
+    telephony-ext
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
@@ -309,16 +315,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     sensors.msm8916
-
-# Telephony packages
-PRODUCT_PACKAGES += \
-    qti-telephony-common \
-    qti-telephony-hidl-wrapper \
-    qti_telephony_hidl_wrapper.xml \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
 
 # TextClassifier
 PRODUCT_PACKAGES += \

@@ -137,9 +137,6 @@ DEVICE_MANIFEST_FILE := $(VENDOR_PATH)/manifest.xml
 # HWUI
 HWUI_COMPILE_FOR_PERF := true
 
-# Keymaster
-TARGET_KEYMASTER_WAIT_FOR_QSEE := true
-
 # Malloc
 MALLOC_SVELTE := true
 

@@ -73,8 +73,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dev.pm.dyn_samplingrate=1 \
     persist.demo.hdmirotationlock=false \
     persist.hwc.mdpcomp.enable=true \
-    persist.hwc.ptor.enable=true \
-    ro.opengles.version=196608
+    persist.hwc.ptor.enable=true
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -99,25 +98,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.VT_CAM_INTERFACE=1 \
     persist.radio.VT_ENABLE=1 \
     persist.radio.VT_HYBRID_ENABLE=1
-
-# Google DNS
-PRODUCT_PROPERTY_OVERRIDES += \
-    net.dns1=1.1.1.1 \
-    net.dns2=1.0.0.1 \
-    net.rmnet0.dns1=1.1.1.1 \
-    net.rmnet0.dns2=1.0.0.1 \
-    net.gprs.dns1=1.1.1.1 \
-    net.gprs.dns2=1.0.0.1 \
-    net.ppp0.dns1=1.1.1.1 \
-    net.ppp0.dns2=1.0.0.1 \
-    net.wlan0.dns1=1.1.1.1 \
-    net.wlan0.dns2=1.0.0.1 \
-    net.eth0.dns1=1.1.1.1 \
-    net.eth0.dns2=1.0.0.1 \
-    dhcp.eth0.dns1=1.1.1.1 \
-    dhcp.eth0.dns2=1.0.0.1 \
-    dhcp.wlan0.dns1=1.1.1.1 \
-    dhcp.wlan0.dns2=1.0.0.1
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \

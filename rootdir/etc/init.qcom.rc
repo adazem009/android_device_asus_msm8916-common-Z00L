@@ -794,12 +794,9 @@ service qcamerasvr /vendor/bin/mm-qcamera-daemon
     user camera
     group camera system inet input graphics
     writepid /dev/cpuset/camera-daemon/tasks
-
-on property:init.svc.media=restarting
-    restart qcamerasvr
-
-on property:init.svc.servicemanager=restarting
-    restart qcamerasvr
+    
+on property:init.svc.qcamerasvr=running
+    restart media
 
 # Allow usb charging to be disabled peristently
 on property:persist.usb.chgdisabled=1

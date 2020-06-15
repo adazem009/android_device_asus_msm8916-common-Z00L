@@ -168,7 +168,7 @@ TARGET_HAS_NO_WLAN_STATS := true
 TARGET_USES_INTERACTION_BOOST := true
 
 # Create Root partitions
-BOARD_ROOT_EXTRA_FOLDERS := firmware persist asdf
+BOARD_ROOT_EXTRA_FOLDERS := firmware persist factory asdf
 
 # Qualcomm support
 BOARD_USES_QCOM_HARDWARE := true

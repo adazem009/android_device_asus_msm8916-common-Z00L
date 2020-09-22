@@ -197,6 +197,7 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.0-service
 
 # HIDL
+PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
 

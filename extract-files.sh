@@ -17,6 +17,10 @@
 
 set -e
 
+DEVICE=Z00xD
+DEVICE_COMMON=msm8916-common
+VENDOR=asus
+
 # Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi

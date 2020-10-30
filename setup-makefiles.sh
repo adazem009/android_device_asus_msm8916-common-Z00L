@@ -17,6 +17,10 @@
 
 set -e
 
+DEVICE=Z00xD
+DEVICE_COMMON=msm8916-common
+VENDOR=asus
+
 # Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
@@ -34,7 +38,7 @@ fi
 setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" "true" "$1"
 
 # Copyright headers and guards
-write_headers "Z00L Z00T"
+write_headers "Z00xD Z00ED Z00RD"
 
 # The standard common blobs
 write_makefiles "$MY_DIR"/proprietary-files.txt

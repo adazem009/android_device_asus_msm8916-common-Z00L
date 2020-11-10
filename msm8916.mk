@@ -292,9 +292,6 @@ PRODUCT_PACKAGES += \
     init.qcom.devstart.sh \
     ueventd.qcom.rc \
     init.safailnet.rc
-# Reduce post boot lags
-PRODUCT_PACKAGES += \
-    init.boot_boost.sh
 
 # Recovery
 PRODUCT_PACKAGES += \

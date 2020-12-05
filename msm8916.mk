@@ -198,8 +198,6 @@ PRODUCT_PACKAGES += \
 
 # HIDL
 PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
 
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \

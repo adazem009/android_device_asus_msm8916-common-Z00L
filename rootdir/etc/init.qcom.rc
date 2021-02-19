@@ -110,10 +110,6 @@ on late-fs
 
 # msm specific files that need to be created on /data
 on post-fs-data
-    # Tune FS
-    write /sys/block/mmcblk0/queue/add_random 0
-    write /sys/block/mmcblk0/queue/nr_requests 300
-    write /sys/block/mmcblk0/queue/rq_affinity 0
 
     # Create folder for mm-qcamera-daemon
     mkdir /data/fdAlbum 0770 camera camera
@@ -662,7 +658,7 @@ service rfs_access /vendor/bin/rfs_access
    user system
    group system net_raw
 
-service hciattach /system/vendor/bin/init.qcom.bt.sh
+service hciattach /vendor/bin/init.qcom.bt.sh
     class late_start
     user bluetooth
     group bluetooth net_bt_admin
@@ -877,7 +873,6 @@ on property:init.svc.spk_calibration=stopped
 
 on property:sys.boot_completed=1
     write /proc/boot_completed_prop 1
-    start set_baseband
     restart vendor.qcamerasvr
 
     # Disable/Enable UART
@@ -888,11 +883,8 @@ on property:sys.boot_completed=1
     # Enable ZRAM on boot_complete
     swapon_all /vendor/etc/fstab.qcom
 
-    write /sys/kernel/mm/ksm/pages_to_scan 100
-    write /sys/kernel/mm/ksm/sleep_millisecs 500
-    write /sys/kernel/mm/ksm/run 1
-    write /proc/sys/vm/min_free_kbytes 2919
-    write /proc/sys/vm/extra_free_kbytes 6075
+    write /proc/sys/vm/min_free_kbytes 5400
+    write /proc/sys/vm/extra_free_kbytes 10800
 
 on property:vold.decrypt=trigger_restart_framework
     stop camera-provider-2-4

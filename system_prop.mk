@@ -2,6 +2,8 @@
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-flags=--no-watch-dog \
     dalvik.vm.dex2oat-swap=false \
+    dalvik.vm.dex2oat-threads=1 \
+    dalvik.vm.boot-dex2oat-threads=1 \
     sys.use_fifo_ui=1
 
 # Audio

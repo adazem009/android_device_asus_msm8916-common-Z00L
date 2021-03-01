@@ -849,7 +849,7 @@ service wcnss-service /vendor/bin/wcnss_service
     group system wifi radio
     oneshot
 
-service post_boot /vendor/bin/init.qcom.post_boot.sh
+service qcom-power /vendor/bin/init.qcom.power.sh
     disabled
     oneshot
 

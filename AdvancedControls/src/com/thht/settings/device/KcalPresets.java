@@ -1,4 +1,4 @@
-package com.lineageos.settings.device;
+package com.thht.settings.device;
 
 public class KcalPresets {
 

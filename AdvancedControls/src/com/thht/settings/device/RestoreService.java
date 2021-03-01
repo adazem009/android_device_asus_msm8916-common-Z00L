@@ -1,4 +1,4 @@
-package com.lineageos.settings.device;
+package com.thht.settings.device;
 
 import android.app.IntentService;
 import android.content.Intent;

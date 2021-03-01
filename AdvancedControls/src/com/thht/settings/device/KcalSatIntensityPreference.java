@@ -1,4 +1,4 @@
-package com.lineageos.settings.device;
+package com.thht.settings.device;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -16,7 +16,7 @@ import android.util.Log;
 
 import java.util.List;
 
-public class KcalRGBMinPreference extends SeekBarDialogPreference implements
+public class KcalSatIntensityPreference extends SeekBarDialogPreference implements
         SeekBar.OnSeekBarChangeListener {
 
     private SeekBar mSeekBar;
@@ -27,14 +27,15 @@ public class KcalRGBMinPreference extends SeekBarDialogPreference implements
     private Button mPlusOneButton;
     private Button mMinusOneButton;
     private Button mRestoreDefaultButton;
+    
+    private static final int OFFSET = 225;
+    private static final String FILE_LEVEL = "/sys/devices/platform/kcal_ctrl.0/kcal_sat";
+    private static final String DEFAULT_VALUE = "33";
 
-    private static final String FILE_LEVEL = "/sys/devices/platform/kcal_ctrl.0/kcal_min";
-    private static final String DEFAULT_VALUE = "35";
-
-    public KcalRGBMinPreference(Context context, AttributeSet attrs) {
+    public KcalSatIntensityPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
         mMinValue = 0;
-        mMaxValue = 255;
+        mMaxValue = 158;
         setDialogLayoutResource(R.layout.preference_dialog_kcal);
     }
 
@@ -88,11 +89,13 @@ public class KcalRGBMinPreference extends SeekBarDialogPreference implements
     }
 
     public static String getValue(Context context) {
-        return Utils.getFileValue(FILE_LEVEL, DEFAULT_VALUE);
+        int value = Integer.parseInt(Utils.getFileValue(FILE_LEVEL, DEFAULT_VALUE));
+        return String.valueOf(translate(value, true));
     }
 
     public static void setValue(String newValue) {
-        Utils.writeValue(FILE_LEVEL, newValue);
+        String value = String.valueOf(translate(Integer.parseInt(newValue), false));
+        Utils.writeValue(FILE_LEVEL, value);
     }
 
     public static void restore(Context context) {
@@ -100,8 +103,9 @@ public class KcalRGBMinPreference extends SeekBarDialogPreference implements
             return;
         }
 
-        String storedValue = PreferenceManager.getDefaultSharedPreferences(context).getString(DeviceSettings.KEY_KCAL_RGB_MIN, DEFAULT_VALUE); 
-        Utils.writeValue(FILE_LEVEL, storedValue);
+        String storedValue = PreferenceManager.getDefaultSharedPreferences(context).getString(DeviceSettings.KEY_KCAL_RGB_MIN, DEFAULT_VALUE);
+        String value = String.valueOf(translate(Integer.parseInt(storedValue), false));
+        Utils.writeValue(FILE_LEVEL, value);
     }
 
     public void onProgressChanged(SeekBar seekBar, int progress,
@@ -136,6 +140,13 @@ public class KcalRGBMinPreference extends SeekBarDialogPreference implements
 
     private void restoreOldState() {
         setValue(String.valueOf(mOldStrength));
+    }
+
+    private static int translate(int value, boolean read) {
+        if (!read)
+            return value + OFFSET;
+        else
+            return value - OFFSET;
     }
 
     private void singleStepPlus() {

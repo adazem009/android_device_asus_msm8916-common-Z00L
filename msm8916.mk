@@ -61,7 +61,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml
 
 # AdvancedControls
-PRODUCT_PACKAGES += AdvancedControls
+RODUCT_PACKAGES += AdvancedControls
 
 # APEX
 PRODUCT_COPY_FILES += \

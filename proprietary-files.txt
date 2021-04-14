@@ -772,3 +772,7 @@ etc/firmware/8939_ZD550KL_volte_modem/modem_pr/mcfg/configs/mcfg_sw/generic/na/v
 etc/firmware/8939_ZD550KL_volte_modem/modem_pr/mcfg/configs/mcfg_sw/generic/na/verizon/svlte/mcfg_sw.mbn
 etc/firmware/8939_ZD550KL_volte_modem/modem_pr/mcfg/configs/mcfg_sw/generic/sa/brazil/commerci/mcfg_sw.mbn
 etc/firmware/8939_ZD550KL_volte_modem/modem_pr/mcfg/configs/mcfg_sw/generic/sea/smartfre/commerci/mcfg_sw.mbn
+
+# Voice recognition
+vendor/lib/hw/sound_trigger.primary.msm8916.so
+vendor/lib/libsmwrapper.so

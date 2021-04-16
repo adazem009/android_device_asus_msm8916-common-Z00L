@@ -7,3 +7,4 @@ LOCAL_C_INCLUDES := $(call project-path-for,recovery) \
     bootable/recovery/otautil/include
 LOCAL_SRC_FILES := recovery_updater.cpp
 LOCAL_MODULE := librecovery_updater_asus
+include $(BUILD_STATIC_LIBRARY)

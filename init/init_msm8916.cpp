@@ -138,33 +138,6 @@ void check_device()
     }
 }
 
-static void init_alarm_boot_properties()
-{
-    int boot_reason;
-    FILE *fp;
-
-    fp = fopen("/proc/sys/kernel/boot_reason", "r");
-    fscanf(fp, "%d", &boot_reason);
-    fclose(fp);
-
-    /*
-     * Setup ro.alarm_boot value to true when it is RTC triggered boot up
-     * For existing PMIC chips, the following mapping applies
-     * for the value of boot_reason:
-     *
-     * 0 -> unknown
-     * 1 -> hard reset
-     * 2 -> sudden momentary power loss (SMPL)
-     * 3 -> real time clock (RTC)
-     * 4 -> DC charger inserted
-     * 5 -> USB charger inserted
-     * 6 -> PON1 pin toggled (for secondary PMICs)
-     * 7 -> CBLPWR_N pin toggled (for external power supply)
-     * 8 -> KPDPWR_N pin toggled (power key pressed)
-     */
-    property_set("ro.alarm_boot", boot_reason == 3 ? "true" : "false");
-}
-
 bool is_target_8916()
 {
     int fd;
@@ -216,7 +189,6 @@ void vendor_load_properties()
     property_override_triple("ro.build.type", "ro.system.build.type", "ro.vendor.build.type", "user");	
     property_override_triple("ro.build.tags", "ro.system.build.tags", "ro.vendor.build.tags", "release-keys");
     check_device();
-    init_alarm_boot_properties();
 
     sprintf(b_description, "Z00L-user 6.0.1 MMB29P WW_user_21.40.1220.2196_20180308 release-keys", family, buildnumber, builddate);
     sprintf(b_fingerprint, "asus/WW_Z00L/ASUS_Z00L_63:6.0.1/MMB29P/WW_user_21.40.1220.2196_20180308:user/release-keys", device, device, buildnumber, builddate);

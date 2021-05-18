@@ -45,7 +45,7 @@ TARGET_NO_BOOTLOADER := true
 # Kernel
 BOARD_DTBTOOL_ARGS := -3
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 loop.max_part=7
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 loop.max_part=7 androidboot.selinux=permissive
 KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/gcc/linux-x86/aarch64/aarch64-elf/bin
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-elf-
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
@@ -201,13 +201,7 @@ endif
 TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib64/libcneapiclient.so|libshims_cne.so \
     /system/vendor/lib64/libflp.so|libshims_flp.so \
-    /system/vendor/lib64/libizat_core.so|libshims_get_process_name.so \
-    /system/vendor/lib/libqomx_jpegenc.so|libboringssl-compat.so \
-    /system/vendor/lib/libmmqjpeg_codec.so|libboringssl-compat.so
-
-# Sp-shim
-TARGET_LD_PRELOAD := \
-    /system/lib/libboringssl-compat.so
+    /system/vendor/lib64/libizat_core.so|libshims_get_process_name.so
 
 # Vendor Unification Init
 TARGET_INIT_VENDOR_LIB := //$(VENDOR_PATH):libinit_msm8916

@@ -6,3 +6,6 @@ allow priv_app fac_file:filesystem getattr;
 allow priv_app hal_memtrack_default:binder call;
 allow priv_app hal_memtrack_default:hwservice_manager find;
 allow priv_app hal_memtrack_hwservice:hwservice_manager find;
+allow priv_app apexd_prop:file { open getattr };
+allow priv_app boot_animation_prop:file { open getattr };
+allow priv_app boot_mode_prop:file open;
